@@ -22,6 +22,8 @@ public class TestController {
     @ResponseBody
     public Map<Object, Object> test() {
         Map<Object, Object> map = new HashMap<>();
+        map.put("code", 0);
+        map.put("message", "success");
         map.put("test", "forestry law knowledge graph");
         return map;
     }
