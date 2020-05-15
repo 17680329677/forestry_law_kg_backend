@@ -34,7 +34,7 @@ public class QuestionAnswerController {
     @SuppressWarnings("unchecked")
     public Map<Object, Object> question(@RequestParam("question") String question) {
         Map<Object, Object> map = new HashMap<>();
-        String question_url = BaseUrl + "//forestry_law_qa/question?question=" + question;
+        String question_url = BaseUrl + "/forestry_law_qa/question?question=" + question;
         String results = restTemplate.getForObject(question_url, String.class);
         Map res = (Map)JSON.parse(results);
         map.put("code", 0);
