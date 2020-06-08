@@ -48,7 +48,11 @@ public class QuestionAnswerController {
             map.put("code", 0);
             map.put("message", "success");
             map.put("data", res.get("data"));
-        } else {
+        } else if (res.containsKey("status") && Integer.parseInt(res.get("status").toString()) == 101) {
+            map.put("code", 1002);
+            map.put("message", res.get("message").toString());
+            map.put("data", res.get("data"));
+        }else {
             String message = res.get("message").toString();
             map.put("code", 1001);
             map.put("message", message);
